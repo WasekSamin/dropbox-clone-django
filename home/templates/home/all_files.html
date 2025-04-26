@@ -1,0 +1,124 @@
+<div class="flex flex-col gap-y-10">
+    <div class="flex flex-wrap justify-between items-center gap-3">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <li class="inline-flex items-center">
+                    <div class="font-medium inline-flex items-center gap-x-2 text-sm font-medium hover:text-indigo-500 dark:text-stone-400 dark:hover:text-stone-100">
+                        <i class="fa-regular fa-folder-open text-lg"></i>
+                        All Files
+                    </div>
+                </li>
+            </ol>
+        </nav>
+        
+        <div>
+            <button data-tooltip-target="tooltip-layout-btn" id="dropdownFileLayoutButton" data-dropdown-toggle="file__layoutDropdown" type="button" class="px-3 py-2 rounded-md flex items-center justify-center bg-stone-200 hover:bg-white dark:bg-stone-800 hover:dark:bg-stone-700 transition-colors duration-200 ease-linear">
+                <i class="fa-solid fa-list"></i>
+            </button>
+
+            <div id="tooltip-layout-btn" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                Layouts
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+
+            <div id="file__layoutDropdown" class="z-10 hidden text-base list-none bg-white divide-y divide-stone-100 dark:divide-stone-700 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 w-44 dark:bg-stone-800">
+                <ul class="py-2" aria-labelledby="dropdownFileLayoutButton">
+                    <li>
+                        <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                            <i class="fa-solid fa-list text-stone-500 dark:text-stone-400"></i>
+                            List
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                            <i class="fa-solid fa-table-cells text-stone-500 dark:text-stone-400"></i>
+                            Grid
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-stone-500 dark:text-stone-400">
+        {% comment %}
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Product name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Color
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Category
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Price
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    <span class="sr-only">Edit</span>
+                </th>
+            </tr>
+        </thead>
+        {% endcomment %}
+        <tbody>
+            <tr class="bg-white border-b dark:bg-stone-800 dark:border-stone-700 border-stone-200 hover:bg-stone-50 dark:hover:bg-stone-600">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Apple MacBook Pro 17"
+                </th>
+                <td class="px-6 py-4">
+                    Silver
+                </td>
+                <td class="px-6 py-4">
+                    Laptop
+                </td>
+                <td class="px-6 py-4">
+                    $2999
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+            <tr class="bg-white border-b dark:bg-stone-800 dark:border-stone-700 border-stone-200 hover:bg-stone-50 dark:hover:bg-stone-600">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Apple MacBook Pro 17"
+                </th>
+                <td class="px-6 py-4">
+                    Silver
+                </td>
+                <td class="px-6 py-4">
+                    Laptop
+                </td>
+                <td class="px-6 py-4">
+                    $2999
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+            <tr class="bg-white border-b dark:bg-stone-800 dark:border-stone-700 border-stone-200 hover:bg-stone-50 dark:hover:bg-stone-600">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Apple MacBook Pro 17"
+                </th>
+                <td class="px-6 py-4">
+                    Silver
+                </td>
+                <td class="px-6 py-4">
+                    Laptop
+                </td>
+                <td class="px-6 py-4">
+                    $2999
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</div>
