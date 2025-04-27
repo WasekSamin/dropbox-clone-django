@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    setWebsiteTheme();
+    refreshFlowbite();
+
     // Reinitialize after HTMX content swaps
     document.body.addEventListener('htmx:afterSwap', function (evt) {
         setWebsiteTheme();
