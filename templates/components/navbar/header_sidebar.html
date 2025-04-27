@@ -11,7 +11,7 @@
                 <i class="fa-solid fa-house text-base"></i>
                 <p>Home</p>
             </a>
-            <a hx-boost="true" href="{% url 'home:home' %}" class="flex flex-col items-center gap-y-2">
+            <a hx-boost="true" href="{% url 'home:recent' %}" class="flex flex-col items-center gap-y-2">
                 <i class="fa-regular fa-clock text-base"></i>
                 <p>Recent</p>
             </a>
@@ -31,7 +31,7 @@
 
         <div class="px-1.5">
             <div class="flex flex-col gap-y-3 border border-stone-100 dark:border-stone-700 p-1.5 rounded-md">
-                <a data-tooltip-target="tooltip-profile" href="#" class="flex flex-col items-center">
+                <a href="{% url 'home:profile' %}" hx-boost="true" data-tooltip-target="tooltip-profile" class="flex flex-col items-center">
                     <img class="w-8 min-w-8 h-8 rounded-full object-contain bg-stone-200 dark:bg-stone-700 hover:bg-stone-100 dark:hover:bg-stone-600 transition-colors duration-200 ease-linear" src="{% static 'assets/images/logo.png' %}" alt="User image">
                 </a>
                 <div id="tooltip-profile" role="tooltip" class="absolute z-10 whitespace-nowrap invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
