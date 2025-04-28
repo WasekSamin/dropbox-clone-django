@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "components/navbar/header_sidebar.html" %}
+    {% include "components/navbar/header.html" %}
+    <div class="pl-[70px] pt-5 h-dvh">
+        <div class="px-5 md:px-10 lg:px-20">
+            <div class="flex flex-col gap-y-10">
+                {% include "./all_folders.html" %}
+                {% include "./all_files.html" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+.profile__mainEl {
+    grid-template-columns: 25% auto;
+}
+
+@media (max-width: 767px) {
+    .profile__mainEl {
+        grid-template-columns: 100%;
+    }   
+}
