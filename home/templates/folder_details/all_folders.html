@@ -1,0 +1,99 @@
+<div class="flex flex-col gap-y-10">
+    <div class="flex flex-wrap justify-between items-center gap-3">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                <li class="inline-flex items-center">
+                    <a href="{% url 'home:all-folders' %}" hx-boost="true" class="font-medium inline-flex items-center gap-x-2 text-sm font-medium hover:text-indigo-500 dark:text-stone-400 dark:hover:text-stone-100">
+                        <i class="fa-regular fa-folder-open text-lg"></i>
+                        All Folders
+                    </a>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">123</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div class="w-full relative p-5 bg-white hover:bg-white/50 rounded-lg shadow-sm dark:bg-stone-800 dark:hover:bg-stone-700">
+            <div class="absolute top-1 right-2">
+                <button id="dropdown__folderBtn-1" data-dropdown-toggle="dropdown__folder-1" class="flex hover:bg-stone-200 dark:hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-200 dark:focus:ring-stone-700 rounded-lg p-1.5" type="button">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+                {% comment %}Dropdown menu{% endcomment %}
+                <div id="dropdown__folder-1" class="z-10 hidden text-base list-none bg-white divide-y divide-stone-100 dark:divide-stone-700 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 w-44 dark:bg-stone-800">
+                    <ul class="py-2" aria-labelledby="dropdown__folderBtn-1">
+                        <li>
+                            <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                <i class="fa-solid fa-circle-info text-stone-500 dark:text-stone-400"></i>
+                                Details
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                <i class="fa-solid fa-pen text-stone-500 dark:text-stone-400"></i>
+                                Rename
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="py-1.5">
+                        <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 text-rose-500 hover:bg-stone-100 dark:hover:bg-stone-600">
+                            <i class="fa-solid fa-trash-can"></i>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <a href="#" hx-boost="true" class="flex flex-col gap-y-4">
+                <i class="fa-regular fa-folder text-2xl text-stone-500 dark:text-stone-400"></i>
+                <div class="flex flex-col gap-y-1">
+                    <h5 class="text-base font-semibold">Documents</h5>
+                    <p class="text-stone-500 dark:text-stone-400">24 files</p>
+                </div>
+            </a>
+        </div>
+        <div class="w-full relative p-5 bg-white hover:bg-white/50 rounded-lg shadow-sm dark:bg-stone-800 dark:hover:bg-stone-700">
+            <div class="absolute top-1 right-2">
+                <button id="dropdown__folderBtn-2" data-dropdown-toggle="dropdown__folder-2" class="flex hover:bg-stone-200 dark:hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-200 dark:focus:ring-stone-700 rounded-lg p-1.5" type="button">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+                {% comment %}Dropdown menu{% endcomment %}
+                <div id="dropdown__folder-2" class="z-10 hidden text-base list-none bg-white divide-y divide-stone-100 dark:divide-stone-700 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 w-44 dark:bg-stone-800">
+                    <ul class="py-2" aria-labelledby="dropdown__folderBtn-2">
+                        <li>
+                            <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                <i class="fa-solid fa-circle-info text-stone-500 dark:text-stone-400"></i>
+                                Details
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                <i class="fa-solid fa-pen text-stone-500 dark:text-stone-400"></i>
+                                Rename
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="py-1.5">
+                        <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 text-rose-500 hover:bg-stone-100 dark:hover:bg-stone-600">
+                            <i class="fa-solid fa-trash-can"></i>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <a href="#" hx-boost="true" class="flex flex-col gap-y-4">
+                <i class="fa-regular fa-folder text-2xl text-stone-500 dark:text-stone-400"></i>
+                <div class="flex flex-col gap-y-1">
+                    <h5 class="text-base font-semibold">Documents</h5>
+                    <p class="text-stone-500 dark:text-stone-400">24 files</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

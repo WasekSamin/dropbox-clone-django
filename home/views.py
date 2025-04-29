@@ -17,6 +17,11 @@ class AllFilesView(View):
         return render(request, "all_files/index.html")
 
 
+class AllFoldersView(View):
+    def get(self, request):
+        return render(request, "all_folders/index.html")
+
+
 class ProfileView(View):
     def get(self, request):
         return render(request, "profile/index.html")
@@ -25,3 +30,13 @@ class ProfileView(View):
 class ImageFilesView(View):
     def get(self, request):
         return render(request, "images/index.html")
+    
+
+class VideoFilesView(View):
+    def get(self, request):
+        return render(request, "videos/index.html")
+    
+
+class FolderDetailView(View):
+    def get(self, request, folder_slug):
+        return render(request, "folder_details/index.html")
