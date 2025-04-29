@@ -9,109 +9,119 @@
     {% include "components/navbar/header.html" %}
     <div class="pl-[70px] pt-5 h-dvh">
         <div class="px-5 md:px-10 lg:px-20">
-        <div x-data="{canEditProfile: false}" class="grid gap-10 profile__mainEl">
-            <div class="flex flex-col gap-y-3">
-                <div class="w-full h-[200px] bg-stone-200 dark:bg-stone-800 rounded-md">
-                    <img loading="lazy" src="{% static 'assets/images/personalImg.png' %}" class="w-full h-full rounded-md object-contain" alt="User Image" />
-                </div>
-                <button type="button" class="px-3 py-2 rounded-md flex items-center justify-center gap-x-2 bg-stone-200 dark:bg-stone-800 hover:bg-white dark:hover:bg-stone-700 transition-colors duration-200 ease-linear">
-                    <i class="fa-regular fa-pen-to-square"></i>
-                    Edit Photo
-                </button>
-            </div>
-            <div>
-                <form class="flex flex-col">
-                    {% csrf_token %}
-                    <div class="flex items-start gap-x-3 justify-between">
-                        <h5 x-show="!canEditProfile" class="font-semibold text-xl">Wasek Samin</h5>
-                        <input x-cloak x-show="canEditProfile" type="text" value="Wasek Samin" id="username" class="mb-3 bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="John" />
-                        <button type="button" @click="canEditProfile = !canEditProfile" class="whitespace-nowrap text-stone-500 dark:text-stone-400 mt-[-0.2rem] rounded-md px-3 py-1.5 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors duration-200 ease-linear">
-                            Edit Profile
-                        </button>
-                    </div>
-                    {% include "components/border.html" %}
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td class="py-2">
-                                    <label for="email" class="text-stone-500 dark:text-stone-400">Email</label>
-                                </td>
-                                <td class="py-2">
-                                    <p x-show="!canEditProfile">wasek@gmail.com</p>
-                                    <input x-cloak x-show="canEditProfile" type="email" value="wasek@gmail.com" id="email" class="bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="John@example.com" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    {% include "components/border.html" %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-2">
-                                    <label for="birth__date" class="text-stone-500 dark:text-stone-400">Date of Birth</label>
-                                </td>
-                                <td class="py-2">
-                                    <p x-show="!canEditProfile">Date</p>
-                                    <div x-show="canEditProfile" class="relative max-w-sm">
-                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                                        <svg class="w-4 h-4 text-stone-500 dark:text-stone-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                        </svg>
-                                    </div>
-                                    <input datepicker id="birth__date" type="text" class="bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full ps-10 p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="Select date">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    {% include "components/border.html" %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-2">
-                                    <label for="countries" class="text-stone-500 dark:text-stone-400">Country</label>
-                                </td>
-                                <td class="py-2">
-                                    <p x-show="!canEditProfile">Bangladesh</p>
-                                    <select x-cloak x-show="canEditProfile" id="countries" class="px-3 py-2 bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500">
-                                        <option selected>Choose a country</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    {% include "components/border.html" %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label for="city" class="text-stone-500 dark:text-stone-400">City</label>
-                                </td>
-                                <td>
-                                    <p x-show="!canEditProfile">Dhaka</p>
-                                    <input x-cloak x-show="canEditProfile" type="text" value="Dhaka" id="city" class="bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="Dhaka" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div x-cloak x-show="canEditProfile" x-transition class="mt-3 flex justify-end">
-                        <button type="submit" class="px-5 py-2 rounded-md flex items-center justify-center gap-x-2 bg-indigo-400 dark:bg-indigo-500 hover:bg-indigo-300 dark:hover:bg-indigo-400 transition-colors duration-200 ease-linear">
+            <div class="flex flex-col gap-y-10">
+                <div x-data="{canEditProfile: false}" class="grid gap-10 profile__mainEl">
+                    <div class="flex flex-col gap-y-3">
+                        <div class="w-full h-[200px] bg-stone-200 dark:bg-stone-800 rounded-md">
+                            <img loading="lazy" src="{% static 'assets/images/logo.png' %}" class="w-full h-full rounded-md object-contain" alt="User Image" />
+                        </div>
+                        <button type="button" class="px-3 py-2 rounded-md flex items-center justify-center gap-x-2 bg-stone-200 dark:bg-stone-800 hover:bg-white dark:hover:bg-stone-700 transition-colors duration-200 ease-linear">
                             <i class="fa-regular fa-pen-to-square"></i>
-                            Update
+                            Edit Photo
                         </button>
                     </div>
-                </form>
+                    <div>
+                        <form class="flex flex-col">
+                            {% csrf_token %}
+                            <div class="flex items-start gap-x-3 justify-between">
+                                <h5 x-show="!canEditProfile" class="font-semibold text-xl">Wasek Samin</h5>
+                                <input x-cloak x-show="canEditProfile" type="text" value="Wasek Samin" id="username" class="mb-3 bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="John" />
+                                <button type="button" @click="canEditProfile = !canEditProfile" class="whitespace-nowrap text-stone-500 dark:text-stone-400 mt-[-0.2rem] rounded-md px-3 py-1.5 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors duration-200 ease-linear">
+                                    Edit Profile
+                                </button>
+                            </div>
+                            {% include "components/border.html" %}
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2">
+                                            <label for="email" class="text-stone-500 dark:text-stone-400">Email</label>
+                                        </td>
+                                        <td class="py-2">
+                                            <p x-show="!canEditProfile">wasek@gmail.com</p>
+                                            <input x-cloak x-show="canEditProfile" type="email" value="wasek@gmail.com" id="email" class="bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="John@example.com" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            {% include "components/border.html" %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">
+                                            <label for="birth__date" class="text-stone-500 dark:text-stone-400">Date of Birth</label>
+                                        </td>
+                                        <td class="py-2">
+                                            <p x-show="!canEditProfile">Date</p>
+                                            <div x-show="canEditProfile" class="relative">
+                                                <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                                    <svg class="w-4 h-4 text-stone-500 dark:text-stone-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                                    </svg>
+                                                </div>
+                                                <input datepicker id="birth__date" type="text" class="bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full ps-10 p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="Select date">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            {% include "components/border.html" %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">
+                                            <label for="countries" class="text-stone-500 dark:text-stone-400">Country</label>
+                                        </td>
+                                        <td class="py-2">
+                                            <p x-show="!canEditProfile">Bangladesh</p>
+                                            <select x-cloak x-show="canEditProfile" id="countries" class="px-3 py-2 bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500">
+                                                <option selected>Choose a country</option>
+                                                <option value="United States">United States</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="France">France</option>
+                                                <option value="Germany">Germany</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            {% include "components/border.html" %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="cities" class="text-stone-500 dark:text-stone-400">City</label>
+                                        </td>
+                                        <td>
+                                            <p x-show="!canEditProfile">Dhaka</p>
+                                            <select x-cloak x-show="canEditProfile" id="cities" class="px-3 py-2 bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500">
+                                                <option selected>Choose a city</option>
+                                                <option value="United States">United States</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="France">France</option>
+                                                <option value="Germany">Germany</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div x-cloak x-show="canEditProfile" x-transition class="mt-3 flex justify-end">
+                                <button type="submit" class="px-5 py-2 rounded-md flex items-center justify-center gap-x-2 bg-indigo-400 dark:bg-indigo-500 hover:bg-indigo-300 dark:hover:bg-indigo-400 transition-colors duration-200 ease-linear">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                    Update
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    {% include "components/border.html" %}
+                    {% include "./storage.html" %}
+                    {% include "./storage_sidebar.html" %}
+                </div>
             </div>
         </div>
-
-        <div class="py-5">
-            {% include "components/border.html" %}
-        </div>
-    </div>
     </div>
 {% endblock %}
