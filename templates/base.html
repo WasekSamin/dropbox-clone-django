@@ -26,8 +26,12 @@
       body {
         font-family: "Inter", sans-serif;
       }
-    </style>
-    <style>
+
+      div[drawer-backdrop],
+      div.[modal-backdrop] {
+        @apply z-[1002];
+      }
+
       [x-cloak] { display: none !important; }
     </style>
     {% comment %}HTMX{% endcomment %}
