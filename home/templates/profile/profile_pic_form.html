@@ -21,27 +21,16 @@
             <div class="p-4 md:p-5 space-y-4">
                 <div class="file__attachmentMainEl flex flex-col gap-y-5">
                     <div ondragenter="profilePicFileDragEnter(event)" ondragover="profilePicFileDragOver(event)" ondragleave="profilePicFileDragLeave(event)" ondrop="profilePicFileDrop(event)" class="flex items-center justify-center w-full">
-                        <label for="profile__picFile" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <label for="profile__picFile" class="flex flex-col items-center justify-center w-full h-64 border-2 border-stone-300 border-dashed rounded-lg cursor-pointer bg-stone-50 dark:hover:bg-stone-800 dark:bg-stone-700 hover:bg-stone-100 dark:border-stone-600 dark:hover:border-stone-500 dark:hover:bg-stone-600">
                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                <svg class="w-8 h-8 mb-4 text-stone-500 dark:text-stone-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
                                 </svg>
-                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400 update__fileText">Click to upload or drag and drop</p>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                <p class="mb-2 text-sm text-stone-500 dark:text-stone-400 update__fileText">Click to upload or drag and drop</p>
+                                <p class="text-xs text-stone-500 dark:text-stone-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                             </div>
                             <input id="profile__picFile" onchange="profilePicFileChange(event)" type="file" class="hidden" />
                         </label>
-                    </div>
-
-                    <div class="attachment__previewEl">
-                        <div class="w-[150px] h-[150px] bg-stone-100 dark:bg-stone-700 rounded-md relative">
-                            <div class="absolute right-1">
-                                <button onclick="removeAttachment(event)" type="button" class="text-base">
-                                    <i class="fa-solid fa-circle-xmark"></i>
-                                </button>
-                            </div>
-                            <img loading="lazy" src="{% static 'assets/images/personalImg.png' %}" class="w-full h-full rounded-md object-contain" alt="" />
-                        </div>
                     </div>
                 </div>
             </div>
