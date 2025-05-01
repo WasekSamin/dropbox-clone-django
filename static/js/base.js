@@ -58,3 +58,14 @@ function getParentElement({el, className}) {
         })
     }
 }
+
+// Applying class on modal backdrop
+function createModalBackdrop() {
+    setTimeout(() => {
+        const modalBackdrop = document.querySelector(".fixed.inset-0.z-40");
+
+        if (modalBackdrop) {
+            modalBackdrop.classList.add("modal__backdrop");
+        }
+    }, 50);
+}

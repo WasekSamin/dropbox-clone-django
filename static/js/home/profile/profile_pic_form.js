@@ -1,16 +1,3 @@
-const profilePicFormModal = document.getElementById("profile__picFormModal");
-
-// Applying class on modal backdrop
-function editPhotoClick(event) {
-    setTimeout(() => {
-        const modalBackdrop = document.querySelector(".fixed.inset-0.z-40");
-
-        if (modalBackdrop) {
-            modalBackdrop.classList.add("modal__backdrop");
-        }
-    }, 50);
-}
-
 function profilePicFileDragEnter(e) {
     e.preventDefault();
 }
@@ -63,7 +50,7 @@ function previewFileElement({file: file, attachmentMainEl, isClearPreviousAttach
     if (isClearPreviousAttachment) {
         attachmentMainEl.querySelector(".attachment__previewEl")?.remove();
     }
-    
+
     const attachmentPreviewEl = document.createElement("div");
     attachmentPreviewEl.classList.add("attachment__previewEl");
     attachmentPreviewEl.innerHTML = `
@@ -76,7 +63,7 @@ function previewFileElement({file: file, attachmentMainEl, isClearPreviousAttach
             <img loading="lazy" src=${URL.createObjectURL(file)} class="w-full h-full rounded-md object-contain" alt=${file.name} />
         </div>
     `;
-    
+
     attachmentMainEl.appendChild(attachmentPreviewEl);
 }
 
@@ -85,6 +72,6 @@ function removeAttachment(e) {
         el: e.currentTarget,
         className: "attachment__previewEl"
     });
-    
+
     previewEl?.remove();
 }

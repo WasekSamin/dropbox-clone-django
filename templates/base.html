@@ -33,6 +33,12 @@
       }
 
       [x-cloak] { display: none !important; }
+
+      @media (hover:none) {
+        .tooltip {
+          display: none !important;
+        }
+      }
     </style>
     {% comment %}HTMX{% endcomment %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/2.0.4/htmx.min.js"

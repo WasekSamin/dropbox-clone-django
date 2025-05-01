@@ -1,15 +1,33 @@
+{% load static %}
+
 <div class="sticky top-0 w-full z-[1001]">
     <div class="px-5 md:px-10 lg:px-20 bg-stone-100 dark:bg-stone-900">
         <div class="pl-[70px] w-full py-3 flex flex-col gap-y-3">
             <div class="w-full flex items-center justify-between gap-x-5">
                 <h5 class="text-lg font-semibold text-stone-600 dark:text-stone-400">YouVault</h5>
                 <div class="flex items-center gap-x-5">
-                    <button data-tooltip-target="tooltip-create-folder-btn" type="button" class="text-stone-600 dark:text-stone-400 hover:text-stone-900 hover:dark:text-stone-100 cursor-pointer p-1.5 rounded-md border border-stone-200 dark:border-stone-800 hover:border-stone-400 hover:dark:border-stone-600 flex flex-col items-center justify-center">
+                    <button id="create__uploadFileDropdownBtn" data-dropdown-toggle="create__uploadFileDropdown" data-tooltip-target="tooltip-create-folder-btn" type="button" class="text-stone-600 dark:text-stone-400 hover:text-stone-900 hover:dark:text-stone-100 cursor-pointer p-1.5 rounded-md border border-stone-200 dark:border-stone-800 hover:border-stone-400 hover:dark:border-stone-600 flex flex-col items-center justify-center">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                     <div id="tooltip-create-folder-btn" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
-                        Create file/folder
+                        Create/Upload File
                         <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <div id="create__uploadFileDropdown" class="z-10 hidden text-base list-none bg-white divide-y divide-stone-100 dark:divide-stone-700 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 w-44 dark:bg-stone-800">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="create__uploadFileDropdownBtn">
+                            <li>
+                                <button onclick="createModalBackdrop()" data-modal-target="upload__fileModal" data-modal-toggle="upload__fileModal" type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                    <i class="fa-solid fa-upload text-stone-500 dark:text-stone-400"></i>
+                                    Upload File(s)
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                    <i class="fa-regular fa-folder-open text-base text-stone-500 dark:text-stone-400"></i>
+                                    Create Folder
+                                </button>
+                            </li>
+                        </ul>
                     </div>
                     <button data-tooltip-target="tooltip-search-file-btn" type="button" class="text-stone-600 dark:text-stone-400 hover:text-stone-900 hover:dark:text-stone-100 cursor-pointer flex flex-col items-center justify-center">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -24,3 +42,7 @@
         </div>
     </div>
 </div>
+
+{% include "components/navbar/header_upload_file_modal.html" %}
+
+<script src="{% static "js/components/navbar/header.js" %}" defer></script>
