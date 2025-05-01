@@ -19,7 +19,7 @@
             </div>
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
-                <div class="file__attachmentMainEl flex flex-col gap-y-5">
+                <div class="file__attachmentMainEl flex flex-col gap-y-3">
                     <div ondragenter="profilePicFileDragEnter(event)" ondragover="profilePicFileDragOver(event)" ondragleave="profilePicFileDragLeave(event)" ondrop="profilePicFileDrop(event)" class="flex items-center justify-center w-full">
                         <label for="profile__picFile" class="flex flex-col items-center justify-center w-full h-64 border-2 border-stone-300 border-dashed rounded-lg cursor-pointer bg-stone-50 dark:hover:bg-stone-800 dark:bg-stone-700 hover:bg-stone-100 dark:border-stone-600 dark:hover:border-stone-500 dark:hover:bg-stone-600">
                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -29,7 +29,7 @@
                                 <p class="mb-2 text-sm text-stone-500 dark:text-stone-400 update__fileText">Click to upload or drag and drop</p>
                                 <p class="text-xs text-stone-500 dark:text-stone-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                             </div>
-                            <input id="profile__picFile" onchange="profilePicFileChange(event)" type="file" class="hidden" />
+                            <input id="profile__picFile" onchange="profilePicFileChange(event)" type="file" multiple class="hidden" />
                         </label>
                     </div>
                 </div>

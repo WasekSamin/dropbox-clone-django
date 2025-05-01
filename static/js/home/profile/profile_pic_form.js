@@ -60,7 +60,7 @@ function previewFileElement({file: file, attachmentMainEl, isClearPreviousAttach
                     <i class="fa-solid fa-circle-xmark"></i>
                 </button>
             </div>
-            <img loading="lazy" src=${URL.createObjectURL(file)} class="w-full h-full rounded-md object-contain" alt=${file.name} />
+            <img loading="lazy" src="${URL.createObjectURL(file)}" class="w-full h-full rounded-md object-contain" alt=${file.name} />
         </div>
     `;
 
