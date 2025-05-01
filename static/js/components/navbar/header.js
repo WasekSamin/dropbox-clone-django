@@ -14,36 +14,34 @@ function uploadFileDrop(e) {
     e.preventDefault();
     const files = e.dataTransfer.files;
 
-    if (files.length > 0) {
-        files?.map(file => {
-            const attachmentMainEl = getParentElement({
-                el: e.target,
-                className: "file__attachmentMainEl"
-            });
+    for (let i=0; i<files.length; i++) {
+        const attachmentMainEl = getParentElement({
+            el: e.target,
+            className: "file__attachmentMainEl"
+        });
 
-            previewFileElement({
-                file: file, attachmentMainEl: attachmentMainEl
-            });
+        previewFileElement({
+            file: files[i], attachmentMainEl: attachmentMainEl
         });
     }
-
 }
 
 function uploadFileChange(e) {
     const files = e.target.files;
 
     if (files.length > 0) {
-        files?.map(file => {
-            alert(typeof file)
+        console.log(files);
+
+        for (let i=0; i<files.length; i++) {
             const attachmentMainEl = getParentElement({
                 el: e.target,
                 className: "file__attachmentMainEl"
             });
 
             previewFileElement({
-                file: file, attachmentMainEl: attachmentMainEl
+                file: files[i], attachmentMainEl: attachmentMainEl
             });
-        });
+        }
     }
 }
 
