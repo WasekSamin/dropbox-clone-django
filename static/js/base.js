@@ -48,3 +48,13 @@ function setTheme({ theme }) {
         })
     }
 }
+
+function getParentElement({el, className}) {
+    if (el.classList.contains(className)) {
+        return el;
+    } else {
+        return getParentElement({
+            el: el.parentElement, className: className
+        })
+    }
+}

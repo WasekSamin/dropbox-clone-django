@@ -10,3 +10,30 @@ function editPhotoClick(event) {
         }
     }, 50);
 }
+
+function profilePicFileDragEnter(e) {
+    e.preventDefault();
+}
+
+function profilePicFileDragOver(e) {
+    e.preventDefault();
+}
+
+function profilePicFileDragLeave(e) {
+    e.preventDefault();
+}
+
+function profilePicFileDrop(e) {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    const attachmentMainEl = getParentElement({
+        el: e.target,
+        className: "file__attachmentMainEl"
+    });
+    console.log(attachmentMainEl);
+}
+
+function profilePicFileChange(e) {
+    const files = e.target.files;
+    console.log(files);
+}
