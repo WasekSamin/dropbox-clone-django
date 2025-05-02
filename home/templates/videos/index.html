@@ -26,7 +26,7 @@
 
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                     <div class="group w-full relative bg-white hover:bg-white/50 rounded-lg shadow-sm dark:bg-stone-800 dark:hover:bg-stone-700">
-                        <button onclick="createModalBackdrop()" data-modal-target="video__previewModal" data-modal-toggle="video__previewModal" type="button" class="cursor-pointer w-full">
+                        <button onclick="showVideoFilePreview(event)" data-modal-target="video__previewModal" data-modal-toggle="video__previewModal" type="button" class="cursor-pointer w-full">
                             <video loading="lazy" preload="auto" poster="" class="rounded-t-md w-full h-[200px] opacity-70 group-hover:opacity-100 object-contain bg-stone-200 dark:bg-stone-700 hover:bg-white/50 dark:hover:bg-stone-600 transition-all duration-200 ease-linear">
                                 <source src="{% static 'assets/videos/video1.mp4' %}" />
                                 Video format is not supported on your browser!
@@ -235,4 +235,6 @@
             </div>
         </div>
     </div>
+    
+    <script src="{% static 'js/home/videos/index.js' %}"></script>
 {% endblock %}
