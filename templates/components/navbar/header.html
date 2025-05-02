@@ -22,7 +22,7 @@
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                <button onclick="createModalBackdrop()" data-modal-target="create__folderModal" data-modal-toggle="create__folderModal" type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
                                     <i class="fa-regular fa-folder-open text-base text-stone-500 dark:text-stone-400"></i>
                                     Create Folder
                                 </button>
@@ -43,7 +43,9 @@
     </div>
 </div>
 
-{% include "components/navbar/header_upload_file_modal.html" %}
-{% include "components/navbar/header_file_search_modal.html" %}
+{% include "components/navbar/upload_file_modal.html" %}
+{% include "components/navbar/file_search_modal.html" %}
+{% include "components/create_folder_modal.html" %}
+{% include "components/file_details_preview_modal.html" %}
 
 <script src="{% static "js/components/navbar/header.js" %}" defer></script>
