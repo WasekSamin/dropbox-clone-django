@@ -14,24 +14,26 @@ document.addEventListener("DOMContentLoaded", () => {
         refreshFlowbite(); // ← This reinitializes dropdowns, tooltips, everything
     });
 
+
+
     // Drag & drop on body
-    document.body.addEventListener("dragenter", (e) => {
-        e.preventDefault();
-    });
-    document.body.addEventListener("dragover", (e) => {
-        e.preventDefault();
-    });
-    document.body.addEventListener("dragleave", (e) => {
-        e.preventDefault();
-    });
-    document.body.addEventListener("drop", (e) => {
-        e.preventDefault();
+    // document.body.addEventListener("dragenter", (e) => {
+    //     e.preventDefault();
+    // });
+    // document.body.addEventListener("dragover", (e) => {
+    //     e.preventDefault();
+    // });
+    // document.body.addEventListener("dragleave", (e) => {
+    //     e.preventDefault();
+    // });
+    // document.body.addEventListener("drop", (e) => {
+    //     e.preventDefault();
 
-        console.log(e.currentTarget);
+    //     console.log(e.currentTarget);
 
-        const files = e.dataTransfer.files;
-        console.log(files);
-    });
+    //     const files = e.dataTransfer.files;
+    //     console.log(files);
+    // });
 });
 
 function setWebsiteTheme() {
@@ -68,7 +70,7 @@ function setTheme({ theme }) {
     }
 }
 
-function getParentElement({el, className}) {
+function getParentElement({ el, className }) {
     if (el.classList.contains(className)) {
         return el;
     } else {
