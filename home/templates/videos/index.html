@@ -5,6 +5,9 @@
 {% block content %}
     {% include "components/navbar/header_sidebar.html" %}
     {% include "components/navbar/header.html" %}
+    {% include "components/file_details_preview_sidebar.html" %}
+    {% include "components/video_preview_modal.html" %}
+    
     <div class="pl-[70px] pt-5 h-dvh">
         <div class="px-5 md:px-10 lg:px-20">
             <div class="flex flex-col gap-y-10">
@@ -23,7 +26,7 @@
 
                 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                     <div class="group w-full relative bg-white hover:bg-white/50 rounded-lg shadow-sm dark:bg-stone-800 dark:hover:bg-stone-700">
-                        <button type="button" class="cursor-pointer w-full">
+                        <button onclick="createModalBackdrop()" data-modal-target="video__previewModal" data-modal-toggle="video__previewModal" type="button" class="cursor-pointer w-full">
                             <video loading="lazy" preload="auto" poster="" class="rounded-t-md w-full h-[200px] opacity-70 group-hover:opacity-100 object-contain bg-stone-200 dark:bg-stone-700 hover:bg-white/50 dark:hover:bg-stone-600 transition-all duration-200 ease-linear">
                                 <source src="{% static 'assets/videos/video1.mp4' %}" />
                                 Video format is not supported on your browser!
@@ -37,9 +40,17 @@
                             <div id="dropdown__fileGrid-1" class="z-10 hidden text-base list-none bg-white divide-y divide-stone-100 dark:divide-stone-700 rounded-lg shadow-sm border border-stone-200 dark:border-stone-700 w-44 dark:bg-stone-800">
                                 <ul class="py-2" aria-labelledby="dropdown__fileGridBtn-1">
                                     <li>
-                                        <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                        <button
+                                            data-drawer-target="file__detailPreviewSidebar" data-drawer-show="file__detailPreviewSidebar" data-drawer-placement="right" aria-controls="file__detailPreviewSidebar"
+                                            type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
                                             <i class="fa-solid fa-circle-info text-stone-500 dark:text-stone-400"></i>
                                             Details
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                            <i class="fa-solid fa-download text-stone-500 dark:text-stone-400"></i>
+                                            Download
                                         </button>
                                     </li>
                                     <li>
@@ -106,6 +117,12 @@
                                     </li>
                                     <li>
                                         <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                            <i class="fa-solid fa-download text-stone-500 dark:text-stone-400"></i>
+                                            Download
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
                                             <i class="fa-solid fa-pen text-stone-500 dark:text-stone-400"></i>
                                             Rename
                                         </button>
@@ -164,6 +181,12 @@
                                         <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
                                             <i class="fa-solid fa-circle-info text-stone-500 dark:text-stone-400"></i>
                                             Details
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="cursor-pointer w-full text-sm flex items-center gap-x-2 px-4 py-2 hover:bg-stone-100 dark:hover:bg-stone-600 dark:text-stone-200">
+                                            <i class="fa-solid fa-download text-stone-500 dark:text-stone-400"></i>
+                                            Download
                                         </button>
                                     </li>
                                     <li>
