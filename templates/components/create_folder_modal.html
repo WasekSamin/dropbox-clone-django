@@ -16,7 +16,14 @@
             </div>
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
-                <input type="text" value="" id="folder__name" class="mb-3 bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="Folder name" />
+                <div>
+                    <label for="folder__name" class="block mb-2 text-sm font-medium text-stone-900 dark:text-white">Folder Name*</label>
+                    <input type="text" id="folder__name" class="bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="Folder name" required />
+                </div>
+                <div>
+                    <label for="folder__desc" class="block mb-2 text-sm font-medium text-stone-900 dark:text-white">Folder Description</label>
+                    <textarea rows="3" id="folder__desc" class="bg-stone-50 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="Folder dedcription"></textarea>
+                </div>
             </div>
             <!-- Modal footer -->
             <div class="flex items-center p-4 md:p-5 border-t border-stone-200 rounded-b dark:border-stone-600">
