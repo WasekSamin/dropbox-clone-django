@@ -1,3 +1,10 @@
+window.addEventListener("popstate", () => {
+        const videoPreviewModal = document.getElementById("video__previewModal");
+        if (videoPreviewModal) {
+          videoPreviewModal.querySelector("video")?.remove();
+        }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     setWebsiteTheme();
     refreshFlowbite();
@@ -13,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setWebsiteTheme();
         refreshFlowbite(); // ← This reinitializes dropdowns, tooltips, everything
     });
-
-
 
     // Drag & drop on body
     // document.body.addEventListener("dragenter", (e) => {
