@@ -2,28 +2,28 @@
 
 <div class="fixed top-0 left-0 w-[70px] min-w-[70px] h-dvh bg-white dark:bg-stone-800 z-[1002]">
     <div class="w-full h-full flex flex-col justify-between gap-y-5 py-3">
-        <a hx-boost="true" href="{% url 'home:home' %}" class="px-3">
+        <a href="{% url 'home:home' %}" class="px-3">
             <img loading="lazy" src="{% static 'assets/images/logo.png' %}" class="w-full object-contain" alt="">
         </a>
 
         <div class="flex flex-col justify-center gap-y-6 h-full overflow-y-auto">
-            <a hx-boost="true" href="{% url 'home:home' %}" class="flex flex-col items-center gap-y-2 border-r-1 border-stone-900 dark:border-stone-200">
+            <a href="{% url 'home:home' %}" class="flex flex-col items-center gap-y-2 border-r-1 border-stone-900 dark:border-stone-200">
                 <i class="fa-solid fa-house text-base"></i>
                 <p>Home</p>
             </a>
-            <a hx-boost="true" href="{% url 'home:recent' %}" class="flex flex-col items-center gap-y-2">
+            <a href="{% url 'home:recent' %}" class="flex flex-col items-center gap-y-2">
                 <i class="fa-regular fa-clock text-base"></i>
                 <p>Recent</p>
             </a>
-            <a hx-boost="true" href="{% url 'home:all-files' %}" class="flex flex-col items-center gap-y-2">
+            <a href="{% url 'home:all-files' %}" class="flex flex-col items-center gap-y-2">
                 <i class="fa-regular fa-folder-open text-base"></i>
                 <p>All Files</p>
             </a>
-            <a hx-boost="true" href="{% url 'home:all-videos' %}" class="flex flex-col items-center gap-y-2">
+            <a href="{% url 'home:all-videos' %}" class="flex flex-col items-center gap-y-2">
                 <i class="fa-solid fa-video text-base"></i>
                 <p>Videos</p>
             </a>
-            <a hx-boost="true" href="{% url 'home:all-images' %}" class="flex flex-col items-center gap-y-2">
+            <a href="{% url 'home:all-images' %}" class="flex flex-col items-center gap-y-2">
                 <i class="fa-regular fa-images text-base"></i>
                 <p>Images</p>
             </a>
@@ -31,7 +31,7 @@
 
         <div class="px-1.5">
             <div class="flex flex-col gap-y-3 border border-stone-100 dark:border-stone-700 p-1.5 rounded-md">
-                <a href="{% url 'home:profile' %}" hx-boost="true" data-tooltip-target="tooltip-profile" class="flex flex-col items-center">
+                <a href="{% url 'home:profile' %}" data-tooltip-target="tooltip-profile" class="flex flex-col items-center">
                     <img class="w-8 min-w-8 h-8 rounded-full object-contain bg-stone-200 dark:bg-stone-700 hover:bg-stone-100 dark:hover:bg-stone-600 transition-colors duration-200 ease-linear" src="{% static 'assets/images/logo.png' %}" alt="User image">
                 </a>
                 <div id="tooltip-profile" role="tooltip" class="absolute z-10 whitespace-nowrap invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
