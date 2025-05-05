@@ -1,26 +1,5 @@
-window.addEventListener("popstate", () => {
-        // Removed video modal video after url changes
-        const videoPreviewModal = document.getElementById("video__previewModal");
-        if (videoPreviewModal) {
-          videoPreviewModal.querySelector("video")?.remove();
-        }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
-    setWebsiteTheme();
-    refreshFlowbite();
-
-    // Reinitialize after HTMX content swaps
-    document.body.addEventListener('htmx:afterSwap', function (evt) {
-        setWebsiteTheme();
-        refreshFlowbite();
-    });
-
-    // Also handle back/forward navigation
-    document.body.addEventListener('htmx:historyRestore', function (evt) {
-        setWebsiteTheme();
-        refreshFlowbite(); // ← This reinitializes dropdowns, tooltips, everything
-    });
+    setWebsiteThemeOnLoad();
 
     // Drag & drop on body
     // document.body.addEventListener("dragenter", (e) => {
@@ -42,17 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 });
 
-function setWebsiteTheme() {
+function setWebsiteThemeOnLoad() {
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         setTheme({ theme: "dark" });
     } else {
         setTheme({ theme: "light" });
-    }
-}
-
-function refreshFlowbite() {
-    if (typeof window.initFlowbite === 'function') {
-        window.initFlowbite();
     }
 }
 

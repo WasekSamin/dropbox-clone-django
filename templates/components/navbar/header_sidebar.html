@@ -6,24 +6,24 @@
             <img loading="lazy" src="{% static 'assets/images/logo.png' %}" class="w-full object-contain" alt="">
         </a>
 
-        <div class="flex flex-col justify-center gap-y-6 h-full overflow-y-auto">
-            <a href="{% url 'home:home' %}" class="flex flex-col items-center gap-y-2 border-r-1 border-stone-900 dark:border-stone-200">
+        <div class="flex flex-col justify-center gap-y-6 h-[calc(100%-1rem)] overflow-y-auto sidebar__content">
+            <a href="{% url 'home:home' %}" class="flex flex-col items-center gap-y-2 sidebar__url">
                 <i class="fa-solid fa-house text-base"></i>
                 <p>Home</p>
             </a>
-            <a href="{% url 'home:recent' %}" class="flex flex-col items-center gap-y-2">
+            <a href="{% url 'home:recent' %}" class="flex flex-col items-center gap-y-2 sidebar__url">
                 <i class="fa-regular fa-clock text-base"></i>
                 <p>Recent</p>
             </a>
-            <a href="{% url 'home:all-files' %}" class="flex flex-col items-center gap-y-2">
+            <a href="{% url 'home:all-files' %}" class="flex flex-col items-center gap-y-2 sidebar__url">
                 <i class="fa-regular fa-folder-open text-base"></i>
                 <p>All Files</p>
             </a>
-            <a href="{% url 'home:all-videos' %}" class="flex flex-col items-center gap-y-2">
+            <a href="{% url 'home:all-videos' %}" class="flex flex-col items-center gap-y-2 sidebar__url">
                 <i class="fa-solid fa-video text-base"></i>
                 <p>Videos</p>
             </a>
-            <a href="{% url 'home:all-images' %}" class="flex flex-col items-center gap-y-2">
+            <a href="{% url 'home:all-images' %}" class="flex flex-col items-center gap-y-2 sidebar__url">
                 <i class="fa-regular fa-images text-base"></i>
                 <p>Images</p>
             </a>
