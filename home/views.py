@@ -40,3 +40,8 @@ class VideoFilesView(View):
 class FolderDetailView(View):
     def get(self, request, folder_slug):
         return render(request, "folder_details/index.html")
+        
+        
+class ComparePlansView(View):
+    def get(self, request):
+        return render(request, "compare_plans/index.html")

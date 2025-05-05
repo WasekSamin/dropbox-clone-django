@@ -27,7 +27,7 @@ function videoFilePreviewClickListener(e) {
 function removeVideoElement() {
   const videoEl = document
     .getElementById("video__previewModal")
-    ?.querySelector("video");
+  ?.querySelector("video");
   videoEl?.remove();
   document.removeEventListener("click", videoFilePreviewClickListener);
 }
