@@ -1,4 +1,5 @@
 window.addEventListener("popstate", () => {
+        // Removed video modal video after url changes
         const videoPreviewModal = document.getElementById("video__previewModal");
         if (videoPreviewModal) {
           videoPreviewModal.querySelector("video")?.remove();
