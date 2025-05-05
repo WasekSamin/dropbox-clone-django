@@ -5,45 +5,45 @@
 {% block content %}
     {% include "components/navbar/header_sidebar.html" %}
     {% include "components/navbar/header.html" %}
-    
+
     <div class="pl-[70px] pt-5 h-dvh">
         <div class="px-5 md:px-10 lg:px-20">
             <div class="flex flex-col gap-y-10">
                 <h5 class="text-xl font-semibold">Sign In</h5>
-                
-<form class="w-full mx-auto flex flex-col gap-y-5 bg-white dark:bg-stone-800 py-7 px-5 rounded-md shadow-md">
-    <div class="flex flex-col gap-y-2">
-          <label for="email" class="block text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
-  <div class="relative">
-    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-      <i class="fa-solid fa-at text-stone-500 dark:text-stone-400"></i>
-    </div>
-    <input type="email" id="email" class="bg-stone-50 border border-stone-300 text-stone-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full px-10 p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="john@example.com" />
-  </div>
-    </div>
-    <div class="flex flex-col gap-y-2">
-          <label for="password" class="block text-sm font-medium text-gray-900 dark:text-white">Your Password</label>
-  <div class="relative">
-    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-      <i class="fa-solid fa-lock text-stone-500 dark:text-stone-400"></i>
-    </div>
-    <input type="password" id="password" class="bg-stone-50 border border-stone-300 text-stone-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full px-10 p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="******" />
-  </div>
-    </div>
-    <div>
-                                <button type="submit" class="px-5 py-2 rounded-md flex items-center justify-center gap-x-2 bg-indigo-400 dark:bg-indigo-500 hover:bg-indigo-300 dark:hover:bg-indigo-400 transition-colors duration-200 ease-linear">
-                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                                    Login
-                                </button>
+
+                <form class="w-full mx-auto flex flex-col gap-y-5 bg-white dark:bg-stone-800 py-7 px-5 rounded-md shadow-md">
+                    <div class="flex flex-col gap-y-2">
+                        <label for="email" class="block text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                <i class="fa-solid fa-at text-stone-500 dark:text-stone-400"></i>
                             </div>
-                            
-                            <div>
-    <p class="text-center">Don't have an account? <a href="{% url 'auth_users:register' %}" class="underline text-indigo-500 dark:text-indigo-400">Sign up</a> now</p>
-</div>
-</form>
+                            <input type="email" id="email" class="bg-stone-50 border border-stone-300 text-stone-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full px-10 p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="john@example.com" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <label for="password" class="block text-sm font-medium text-gray-900 dark:text-white">Your Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                <i class="fa-solid fa-lock text-stone-500 dark:text-stone-400"></i>
+                            </div>
+                            <input type="password" id="password" class="bg-stone-50 border border-stone-300 text-stone-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full px-10 p-2.5 dark:bg-stone-700 dark:border-stone-600 dark:placeholder-stone-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="******" />
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="px-5 py-2 rounded-md flex items-center justify-center gap-x-2 bg-indigo-400 dark:bg-indigo-500 hover:bg-indigo-300 dark:hover:bg-indigo-400 transition-colors duration-200 ease-linear">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            Login
+                        </button>
+                    </div>
+
+                    <div>
+                        <p class="text-center">Don't have an account? <a href="{% url 'auth_users:register' %}" class="underline text-indigo-500 dark:text-indigo-400">Sign up</a> now</p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    
+
     <script src="{% static 'js/auth_users/login.js' %}"></script>
 {% endblock %}
